@@ -1,6 +1,7 @@
 
 package com.bankingsystem.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  * 
  * @author
  */
-public abstract class Account {
+public abstract class Account implements Serializable {
 
     /** enum constants for all types of accounts */
     public enum AccountType { SAVINGS, CURRENT, CHECKING };
@@ -18,6 +19,9 @@ public abstract class Account {
     
     /** customer who owns this account */
     private Customer customer;
+    
+    /** login password for this account */
+    private String password;
     
     /** balance of the account */
     private double balance;
@@ -31,10 +35,11 @@ public abstract class Account {
      * @param customer the customer of the account
      * @param initialBalance initial balance of the account
      */
-    public Account(String accNumber, Customer customer, double initialBalance) {
+    public Account(String accNumber, Customer customer, double initialBalance, String password) {
         this.accNumber = accNumber;
         this.customer = customer;
         this.balance = initialBalance;
+        this.password = password;
     }
 
     public String getAccNumber() {
@@ -48,7 +53,15 @@ public abstract class Account {
     public double getBalance() {
         return balance;
     }
-    
+
+    public String getPassword() {
+        return password;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+        
     public abstract AccountType getType();
     public abstract boolean deposit(double amount);
     public abstract boolean withdraw(double amount);

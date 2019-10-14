@@ -1,5 +1,6 @@
 package com.bankingsystem.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,8 +11,12 @@ import java.util.Map;
  * 
  * @author
  */
-public class Bank {
+public class Bank implements Serializable {
     
+    /** name of the bank */
+    private String name;
+    
+    /** list of all accounts in this bank grouped by branch */
     private Map<Branch, List<Account>> accounts;
 
     public Bank() {

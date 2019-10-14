@@ -1,5 +1,6 @@
 package com.bankingsystem.model;
 
+
 /**
  * This class is a subclass of Account and represents a savings account in a bank.
  * 
@@ -15,8 +16,8 @@ public class SavingsAccount extends Account {
      * @param customer the Customer who owns this account
      * @param initialBalance the initial balance of the account
      */
-    public SavingsAccount(String accId, Customer customer, double initialBalance) {
-        super(accId, customer, initialBalance);
+    public SavingsAccount(String accId, Customer customer, double initialBalance, String password) {
+        super(accId, customer, initialBalance, password);
     }
 
     

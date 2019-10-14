@@ -1,11 +1,13 @@
 package com.bankingsystem.model;
 
+import java.io.Serializable;
+
 /**
  * This class model a specific branch details of a bank.
  * 
  * @author
  */
-public class Branch {
+public class Branch implements Serializable {
     
     private String name;
     private String address;

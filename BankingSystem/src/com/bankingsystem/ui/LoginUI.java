@@ -52,7 +52,7 @@ public class LoginUI {
                     break;
             }
         }
-        System.out.println("Thanks for using the Banking System.");
+        System.out.println("\nThanks for using the Banking System.");
         System.out.println("Have a nice day! Goodbye.\n");
     }
 }
