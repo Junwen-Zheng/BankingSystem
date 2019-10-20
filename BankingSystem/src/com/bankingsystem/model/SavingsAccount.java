@@ -15,9 +15,11 @@ public class SavingsAccount extends Account {
      * @param accId unique ID of the account
      * @param customer the Customer who owns this account
      * @param initialBalance the initial balance of the account
+     * @param  password the account password
+     * @param branch the account branch
      */
-    public SavingsAccount(String accId, Customer customer, double initialBalance, String password) {
-        super(accId, customer, initialBalance, password);
+    public SavingsAccount(String accId, Customer customer, double initialBalance, String password, Branch branch) {
+        super(accId, customer, initialBalance, password, branch);
     }
 
     

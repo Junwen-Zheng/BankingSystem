@@ -6,8 +6,19 @@ package com.bankingsystem.model;
  */
 public class CheckingAccount extends Account {
 
-    public CheckingAccount(String accNumber, Customer customer, double initialBalance, String password) {
-        super(accNumber, customer, initialBalance, password);
+    
+    /**
+     * Class constructor that creates a new Checkings account with given
+     * parameters.
+     * 
+     * @param accId unique ID of the account
+     * @param customer the Customer who owns this account
+     * @param initialBalance the initial balance of the account
+     * @param  password the account password
+     * @param branch the account branch
+     */
+    public CheckingAccount(String accId, Customer customer, double initialBalance, String password, Branch branch) {
+        super(accId, customer, initialBalance, password, branch);
     }
 
     @Override
