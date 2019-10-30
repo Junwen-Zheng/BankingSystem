@@ -2,6 +2,7 @@
 package com.bankingsystem.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,13 +25,13 @@ public abstract class Account implements Serializable {
     private String password;
     
     /** balance of the account */
-    private double balance;
+    protected double balance;
     
     /** branch to which this account belongs */
     private Branch branch;
     
     /** list of transactions made from this account */
-    private List<Transaction> transactions;
+    protected List<Transaction> transactions;
     
     /**
      * Class constructor that creates a new bank account.
@@ -46,6 +47,7 @@ public abstract class Account implements Serializable {
         this.balance = initialBalance;
         this.password = password;
         this.branch = branch;
+        transactions = new ArrayList<>();
     }
 
     public String getAccNumber() {
@@ -64,6 +66,9 @@ public abstract class Account implements Serializable {
         return password;
     }
 
+    public void addTransaction(Transaction t){
+        transactions.add(t);
+    }
     public List<Transaction> getTransactions() {
         return transactions;
     }

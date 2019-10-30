@@ -38,15 +38,40 @@ public class AdminUI {
                     done = true;
                     break;
                 case 1:
-                    System.out.println("-- Not yet implemented --");
+                    doCreateBank();
                     break;
                 case 2:
-                    System.out.println("-- Not yet implemented --");
+                    doCreateAccount();
                     break;
                 default:
                     System.out.println("\nInvalid choice ! Must be between 0 - 2.");
                     break;
             }
         }
+    }
+    
+    private void doCreateBank(){
+        int choice;
+        String name;
+        String brName, brAddr;
+        System.out.print("\n1. Add a new bank\n2. Add a new branch to an existing bank.\n3. Cancel");
+        choice = input.nextInt();
+        input.nextLine();
+        if(choice == 1){
+            
+        }
+        else if(choice == 2){
+            
+        }
+        else if(choice == 3){
+            return;
+        }
+        else{
+            
+        }
+    }
+    
+    private void doCreateAccount(){
+        
     }
 }

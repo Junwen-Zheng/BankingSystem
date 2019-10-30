@@ -8,7 +8,7 @@ public class CheckingAccount extends Account {
 
     
     /**
-     * Class constructor that creates a new Checkings account with given
+     * Class constructor that creates a new Checking account with given
      * parameters.
      * 
      * @param accId unique ID of the account

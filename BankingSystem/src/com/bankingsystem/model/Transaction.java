@@ -12,5 +12,32 @@ public class Transaction implements Serializable {
     
     public enum TransactionType { DEPOSIT, WITHDRAW, TRANSFER };
     
+    private double amount;
+    private TransactionType type;
+    private Account destAccount;
+
+    public Transaction(double amount, TransactionType type) {
+        this.amount = amount;
+        this.type = type;
+        destAccount = null;
+    }
     
+    public Transaction(double amount, TransactionType type, Account destAccount) {
+        this.amount = amount;
+        this.type = type;
+        this.destAccount = destAccount;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public TransactionType getType() {
+        return type;
+    }
+
+    public Account getDestAccount() {
+        return destAccount;
+    }
+        
 }

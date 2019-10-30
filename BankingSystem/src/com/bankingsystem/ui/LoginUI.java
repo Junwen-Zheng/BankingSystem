@@ -33,6 +33,7 @@ public class LoginUI {
     public void run(){
         int choice;
         boolean done = false;
+        String username, password;
         
         while(!done){
             showMenu();
@@ -42,7 +43,17 @@ public class LoginUI {
                     done = true;
                     break;
                 case 1:
-                    System.out.println("-- Not yet implemented --");
+                    System.out.print("Enter admin username: ");
+                    username = input.nextLine();
+                    System.out.print("Enter admin password: ");
+                    password = input.nextLine();
+                    if(username.equals("admin") && password.equals("admin123")){
+                        AdminUI adminUI = new AdminUI(bankSystem);
+                        adminUI.run();
+                    }
+                    else{
+                        System.out.println("\nInvalid Login!");
+                    }
                     break;
                 case 2:
                     System.out.println("-- Not yet implemented --");

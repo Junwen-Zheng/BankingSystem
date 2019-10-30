@@ -31,6 +31,29 @@ public class Bank implements Serializable {
     }
 
     /**
+     * Add a new branch to this bank.
+     * 
+     * @param br the new Branch
+     */
+    public void addBranch(Branch br){
+        if(!accounts.containsKey(br)){
+            accounts.put(br, new ArrayList<>());
+        }
+    }
+    /**
+     * Get a list of branches of this bank.
+     * 
+     * @return a List of branches
+     */
+    public List<Branch> getBranchNames(){
+        List<Branch> branches = new ArrayList<>();
+        for(Branch br : accounts.keySet()){
+            branches.add(br);
+        }
+        return branches;
+    }
+    
+    /**
      * Get the name of the bank.
      * @return the name of the bank
      */

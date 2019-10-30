@@ -30,16 +30,27 @@ public class SavingsAccount extends Account {
 
     @Override
     public boolean deposit(double amount) {
+        balance += amount;
+        Transaction t = new Transaction(amount, Transaction.TransactionType.DEPOSIT);
+        transactions.add(t);
         return true;
     }
 
     @Override
     public boolean withdraw(double amount) {
+        if(balance < amount) return false;
+        balance -= amount;
+        Transaction t = new Transaction(amount, Transaction.TransactionType.WITHDRAW);
+        transactions.add(t);
         return true;
     }
 
     @Override
     public boolean transfer(Account toAccount, double amount) {
+        if(balance < amount) return false;
+        balance -= amount;
+        Transaction t = new Transaction(amount, Transaction.TransactionType.TRANSFER, toAccount);
+        transactions.add(t);
         return true;
     }
     

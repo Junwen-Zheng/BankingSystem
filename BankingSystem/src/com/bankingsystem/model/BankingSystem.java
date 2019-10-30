@@ -4,8 +4,10 @@ package com.bankingsystem.model;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -94,6 +96,26 @@ public class BankingSystem implements Serializable {
         } catch (ClassNotFoundException ex) {
             System.out.println("System Error: " + ex.getMessage());
             return null;
+        }
+    }
+    
+    /**
+     * Save the whole BankingSystem data to a serialised data file.
+     * 
+     * @param filename the name of the serialised data file.
+     */
+    public void saveToFile(String filename){
+        try {
+            FileOutputStream fout = new FileOutputStream(new File(filename));
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(this);
+            oos.flush();
+            oos.close();
+            System.out.println("BankingSystem data saved to file " + filename);
+        } catch (FileNotFoundException ex) {
+            System.out.println("Could not save to file " + filename);
+        } catch (IOException ex) {
+            System.out.println("IO Error: " + ex.getMessage());
         }
     }
 }
