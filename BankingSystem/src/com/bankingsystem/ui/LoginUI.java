@@ -38,6 +38,7 @@ public class LoginUI {
         while(!done){
             showMenu();
             choice = input.nextInt();
+            input.nextLine();
             switch(choice){
                 case 0:
                     done = true;
@@ -63,6 +64,7 @@ public class LoginUI {
                     break;
             }
         }
+        bankSystem.saveToFile("BankingSystem.dat");
         System.out.println("\nThanks for using the Banking System.");
         System.out.println("Have a nice day! Goodbye.\n");
     }

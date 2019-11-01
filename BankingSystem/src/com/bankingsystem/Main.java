@@ -21,7 +21,15 @@ public class Main {
         System.out.println("* Welcome to the Banking System Application *");
         System.out.println("*********************************************");
         
-        BankingSystem bankSystem = new BankingSystem();
+        BankingSystem bankSystem = BankingSystem.loadFromFile("BankingSystem.dat");
+        if(bankSystem == null){
+            bankSystem = new BankingSystem();
+            System.out.println("Database could not be loaded from file BankingSystem.dat");
+            System.out.println("Creating empty database.\n");
+        }
+        else{
+            System.out.println("Database successfully loaded from file BankingSystem.dat\n");
+        }
         LoginUI login = new LoginUI(bankSystem);
         login.run();
     }
